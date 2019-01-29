@@ -15,20 +15,20 @@ struct _event_chain_t
     _event_chain_t *next;
 };
 
-typedef struct event_emmiter_t EventEmmiter;
-struct event_emmiter_t
+typedef struct event_emitter_t EventEmitter;
+struct event_emitter_t
 {
     _event_chain_t *chain;
 };
 
-EventEmmiter *
+EventEmitter *
 ev_emmiter_init();
 
 void
-ev_on(EventEmmiter *ev, char *event, void (*cb)(void *));
+ev_on(EventEmitter *ev, char *event, void (*cb)(void *));
 
 void
-ev_emit(EventEmmiter *ev, char *event, void *args);
+ev_emit(EventEmitter *ev, char *event, void *args);
 
 void
 ev_loop();

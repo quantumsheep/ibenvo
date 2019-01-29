@@ -1,16 +1,16 @@
-#include "evenemential.h"
+#include "ibenvo.h"
 
-EventEmmiter *
+EventEmitter *
 ev_emmiter_init()
 {
-    EventEmmiter *ev = (EventEmmiter *)malloc(sizeof(EventEmmiter *));
+    EventEmitter *ev = (EventEmitter *)malloc(sizeof(EventEmitter *));
     ev->chain = NULL;
 
     return ev;
 }
 
 void
-ev_on(EventEmmiter *ev, char *event, void (*cb)(void *))
+ev_on(EventEmitter *ev, char *event, void (*cb)(void *))
 {
     _event_chain_t *chain = (_event_chain_t *)malloc(sizeof(_event_chain_t));
     chain->cb = cb;
@@ -21,7 +21,7 @@ ev_on(EventEmmiter *ev, char *event, void (*cb)(void *))
 }
 
 void
-ev_emit(EventEmmiter *ev, char *event, void *args)
+ev_emit(EventEmitter *ev, char *event, void *args)
 {
     WorkerErr err;
     _event_chain_t *chain = ev->chain;
