@@ -1,7 +1,7 @@
 #include "ibenvo.h"
 
 EventEmitter *
-ev_emmiter_init()
+ev_emitter_init()
 {
     EventEmitter *ev = (EventEmitter *)malloc(sizeof(EventEmitter *));
     ev->chain = NULL;

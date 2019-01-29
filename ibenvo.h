@@ -22,7 +22,7 @@ struct event_emitter_t
 };
 
 EventEmitter *
-ev_emmiter_init();
+ev_emitter_init();
 
 void
 ev_on(EventEmitter *ev, char *event, void (*cb)(void *));
