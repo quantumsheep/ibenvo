@@ -8,3 +8,4 @@ Well, you don't have a lot of functions:
 - `ev_emitter_init()` which instantiate an `EventEmitter *`. Use this function before using any other functions that requires an `EventEmitter`, else it will just doesn't work.
 - `ev_on(EventEmitter *ev, char *event, void (*cb)(void *)))` can be used to add a listener to a given event. The callback function (`cb`) will be launched if the given event is emitted. Events are stored in a chained list style to take care of your RAM.
 - `ev_emit(EventEmitter *ev, char *event, void *args)` is the emitter, when you launch this function, it will loop over all events who are listening in the `EventEmitter` (`ev`) and launch the callbacks that match the given event.
+- `ev_loop()` will just loop indefinitely, it's literally a `while(1)` loop. Put it at the end of your program.
